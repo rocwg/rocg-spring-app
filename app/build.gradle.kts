@@ -13,11 +13,18 @@ plugins {
 repositories {
     //优先本地,国内
     mavenLocal()
+    maven("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/")
+    maven("https://repo.huaweicloud.com/repository/maven/")
+    maven("https://repo.spring.io/release")
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
+    implementation("io.github.livk-cloud:spring-extension-commons:1.3.3")
+    implementation("org.springframework.boot:spring-boot-starter-web:3.3.3")
+    compileOnly("org.projectlombok:lombok:1.18.34")
+
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
@@ -34,10 +41,10 @@ java {
     }
 }
 
-application {
+//application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
-}
+//    mainClass = "org.example.App"
+//}
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
