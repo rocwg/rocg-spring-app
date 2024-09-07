@@ -5,10 +5,32 @@
  * For more detailed information on multi-project builds, please refer to https://docs.gradle.org/8.10/userguide/multi_project_builds.html in the Gradle documentation.
  */
 
+pluginManagement {
+    plugins {
+        // Apply the foojay-resolver plugin to allow automatic download of JDKs
+        id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+        //自定义插件
+        id("com.rocg.service") version "1.0.0"
+    }
+    resolutionStrategy {
+    }
+    repositories {
+        maven(url = "https://maven.aliyun.com/repository/public")
+        maven {
+            credentials {
+                username = "656d9e4f654eaaddc6b48a74"
+                password = "e66n)GR[Le(c"
+            }
+            url = uri("https://packages.aliyun.com/maven/repository/2439432-release-kivzCy")
+        }
+    }
+}
+/*
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
+ */
 
 rootProject.name = "rocg-spring-app"
 include("app")
