@@ -5,10 +5,34 @@
  * For more detailed information on multi-project builds, please refer to https://docs.gradle.org/8.10/userguide/multi_project_builds.html in the Gradle documentation.
  */
 
+pluginManagement {
+    repositories {
+        maven("https://www.jitpack.io")
+        mavenCentral()
+    }
+    // 添加插件依赖
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == "io.github.rocg-cloud") {
+                useModule("com.github.rocg-cloud.rocg-gradle-plugin:io.github.rocg-cloud.service.gradle.plugin:1.0.1")
+            }
+        }
+    }
+    //
+    plugins {
+        // Apply the foojay-resolver plugin to allow automatic download of JDKs
+        id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+        //自定义插件
+        id("io.github.rocg-cloud.service") version "1.0.1"
+    }
+}
+
+/*
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
+ */
 
 rootProject.name = "rocg-spring-app"
 include("app")
