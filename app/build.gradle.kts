@@ -11,6 +11,8 @@ plugins {
 }
 
 repositories {
+    //优先本地,国内
+    mavenLocal()
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
