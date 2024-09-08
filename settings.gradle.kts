@@ -10,7 +10,7 @@ pluginManagement {
         // Apply the foojay-resolver plugin to allow automatic download of JDKs
         id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
         //自定义插件
-        id("com.rocg.service") version "1.0.0"
+        id("io.github.rocwg.gradle.plugin.service") version "1.0.0"
     }
     resolutionStrategy {
     }

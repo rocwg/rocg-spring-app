@@ -8,7 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     //application
-    id("com.rocg.service")
+    id("io.github.rocwg.gradle.plugin.service")
 }
 
 repositories {

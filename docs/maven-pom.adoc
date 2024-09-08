@@ -1,0 +1,12 @@
+
+image:image/2024-09-08_135501.png[projectName,groupId,packagePath,artifactId]
+
+[source,php]
+----
+rootProject.name = "rocwg-gradle-plugin"
+
+- root (groupId: io.github.rocwg, artifactId: rocwg-gradle-plugin)
+  - dependency (artifactId: rocwg-gradle-plugin-dependency, packagePath: io.github.rocwg.gradle.plugin.dependency)
+  - optimizer (artifactId: rocwg-gradle-plugin-optimizer, packagePath: io.github.rocwg.gradle.plugin.optimizer)
+
+----
